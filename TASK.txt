@@ -1,0 +1,16 @@
+You need to create simple application. The application needs to use database Postgres or Mysql.
+The application needs to use the Django user model You need to create app with model. The model
+should include two fields: one to store a domain name and the other to specify a flag if the domain
+is private or not. The application needs to have Django admin panel. Admin needs to have opportunity
+create users from panel.
+
+Using Django REST Framework create API.
+•GET /api/ (Get domain list) - if user is authenticated, application returns all domains, otherwise
+    returns domains where is_private is False.
+•GET /api/:pk (Get domain) - authenticated user can get any domain, AnonymousUser can get only
+    domain where is_private is False
+•POST /api (Add domain) - Only user with username manager can create this request. The required
+    fields domain and is_private. DomainView should start only with https:// and be available on the
+    Internet (The response from domain must to return status 200)
+
+Create unittest
